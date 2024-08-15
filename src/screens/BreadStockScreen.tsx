@@ -1,8 +1,14 @@
 import React, {useState} from 'react';
 import {ScrollView} from 'react-native';
-import {Box, Input, Button, Text, Icon, VStack} from 'native-base';
+import {Box, Input, Button, Text, VStack, Image} from 'native-base';
 import {StackNavigationProp} from '@react-navigation/stack';
 import {RootStackParamList} from '../../App';
+
+// Import icon and image files
+import slicesIcon from '../../assets/slicesicon.png';
+import daysIcon from '../../assets/daysicon.png';
+import priceIcon from '../../assets/priceicon.png';
+import bottomImage from '../../assets/newimage2.png';
 
 type BreadStockScreenNavigationProp = StackNavigationProp<
   RootStackParamList,
@@ -34,12 +40,12 @@ const BreadStockScreen: React.FC<Props> = ({navigation}) => {
   };
 
   return (
-    <Box flex={1} p={4} backgroundColor="#f0f0f0">
+    <Box flex={1} p={4} backgroundColor="#D1E9F6">
       <ScrollView>
         <Text
           fontSize="2xl"
           fontWeight="bold"
-          color="#0071ce"
+          color="#4CB9E7"
           textAlign="center"
           mb={6}>
           Bread Stock Calculator
@@ -52,7 +58,7 @@ const BreadStockScreen: React.FC<Props> = ({navigation}) => {
             borderRadius="md"
             p={2}
             shadow={2}>
-            <Icon name="bread-slice" size={24} color="#0071ce" />
+            <Image source={slicesIcon} alt="Slices Icon" size={6} />
             <Input
               variant="outline"
               placeholder="Slices consumed per day"
@@ -70,7 +76,7 @@ const BreadStockScreen: React.FC<Props> = ({navigation}) => {
             borderRadius="md"
             p={2}
             shadow={2}>
-            <Icon name="calendar-range" size={24} color="#0071ce" />
+            <Image source={daysIcon} alt="Days Icon" size={6} />
             <Input
               variant="outline"
               placeholder="Days to consume stock"
@@ -88,7 +94,7 @@ const BreadStockScreen: React.FC<Props> = ({navigation}) => {
             borderRadius="md"
             p={2}
             shadow={2}>
-            <Icon name="currency-usd" size={24} color="#0071ce" />
+            <Image source={priceIcon} alt="Price Icon" size={6} />
             <Input
               variant="outline"
               placeholder="Average purchase price ($)"
@@ -101,12 +107,27 @@ const BreadStockScreen: React.FC<Props> = ({navigation}) => {
           </Box>
           <Button
             mt={4}
-            bg="#0071ce"
+            bg="#00A9FF"
             _text={{color: '#ffffff', fontWeight: 'bold'}}
             onPress={handleSubmit}>
             Calculate
           </Button>
         </VStack>
+        {/* Image section below fields */}
+        <Box
+          width="100%"
+          height={200}
+          mt={4}
+          bg="white"
+          justifyContent="center"
+          alignItems="center">
+          <Image
+            source={bottomImage}
+            alt="Bottom Section Image"
+            // eslint-disable-next-line react-native/no-inline-styles
+            style={{width: '100%', height: '100%'}}
+          />
+        </Box>
       </ScrollView>
     </Box>
   );

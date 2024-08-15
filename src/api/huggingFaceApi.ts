@@ -15,9 +15,9 @@ export async function getBreadRecommendation(
     They want to stock bread for ${daysOfStock} days.
     Their average purchase price for bread is $${averagePrice}.
     Available bread options:
-    - Harvest: 10 slices per packet, $2.3 per packet
-    - Britannia: 20 slices per packet, $2.4 per packet
-    how many packets of bread should purchase in numbers of which brand Harvest or Britannia ?.
+    - Harvest: 10 slices per packet, $2.3 per packet, 12 packets
+    - Britannia: 20 slices per packet, $2.4 per packet, 6 packets
+    Which bread should user purchase Harvest or Britannia and why ?.
   `;
 
   try {
